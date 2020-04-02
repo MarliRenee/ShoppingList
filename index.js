@@ -41,21 +41,13 @@
     });
 
 //**REMOVE *//
-  $('.shopping-item-delete').click( function deleteItem(e){
-        e.preventDefault();
-        var itemToRemove = $(this).parent().parent();
-        itemToRemove.fadeOut(function(){
-        }); 
-    });
+$('.shopping-list').on('click', '.shopping-item-delete', function(e) {
+    var itemToRemove = $(this).parent().parent();
+    itemToRemove.fadeOut();
+  });  
+
 
 //**CHECK *//
-// $('.shopping-item-toggle').click( function (e) {
-//     e.preventDefault();
-//     $(this).closest('.shopping-item').toggleClass('shopping-item__checked');
-//     });
-
-// $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
-//     $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
-//   });
-
-// });
+$('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
